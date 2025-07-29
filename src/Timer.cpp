@@ -1,8 +1,9 @@
 #include "Timer.h"
 #include <iostream>
 
-Timer::Timer(const sf::Font &font, const sf::String &string, const unsigned int characterSize) : Text(font, string, characterSize) {
-    setPosition({400, 0});
+
+Timer::Timer(): font("assets/fonts/Arialn.ttf"), text(font, "00:00.00", 30) {
+    text.setPosition({350, 0});
 }
 
 Timer::~Timer() {
@@ -42,5 +43,10 @@ void Timer::update(float delta) {
         timeStr = std::to_string(time);
     }
 
-    setString(minutesStr + ":" + secondsStr + "." + timeStr);
+    text.setString(minutesStr + ":" + secondsStr + "." + timeStr);
+
+}
+
+void Timer::render(sf::RenderWindow &window) const {
+    window.draw(text);
 }

@@ -1,16 +1,17 @@
 #pragma once
-#include <SFML/Graphics/Text.hpp>
-#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 
-class Timer final : public  sf::Text{
+class Timer{
     public:
-    Timer(const sf::Font &font, const sf::String &string, const unsigned int characterSize);
-
+    Timer();
     ~Timer();
 
     void update(float delta);
+    void render(sf::RenderWindow& window) const;
 
     private:
     sf::Clock clock;
+    sf::Font font;
+    sf::Text text;
 };

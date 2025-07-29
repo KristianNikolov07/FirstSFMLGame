@@ -1,7 +1,7 @@
 #include "Game.h"
 
 
-Game::Game(): player(400, 500), timer(sf::Font("assets/fonts/Arialn.ttf"), "0", 30) {
+Game::Game(): player(400, 500){
     window.create(sf::VideoMode({800, 800}), "SFML Game", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 }
@@ -31,7 +31,7 @@ void Game::Render() {
 
     window.draw(player);
     enemy_manager.render(window);
-    window.draw(timer);
+    timer.render(window);
 
     window.display();
 }
