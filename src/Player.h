@@ -1,10 +1,10 @@
 #pragma once
-#include "Game.h"
+#include <SFML/Graphics.hpp>
 
 class Player final : public sf::RectangleShape {
     public:
     Player(float x, float y);
-    ~Player();
+    ~Player() override;
 
     void update(float delta, const sf::RenderWindow& window);
 

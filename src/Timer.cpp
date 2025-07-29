@@ -1,6 +1,9 @@
 #include "Timer.h"
 #include <iostream>
 
+Timer::Timer(const sf::Font &font, const sf::String &string, const unsigned int characterSize) : Text(font, string, characterSize) {
+    setPosition({400, 0});
+}
 
 Timer::~Timer() {
 

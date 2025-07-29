@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include "Enemy.h"
+
 EnemyManager::EnemyManager() {
     srand(time(0));
 }

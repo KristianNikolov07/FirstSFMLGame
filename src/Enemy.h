@@ -1,11 +1,13 @@
 #pragma once
-#include "Game.h"
-class Player;
+#include <SFML/Graphics.hpp>
+
+class Player; // <- Because c++ is dumb
 
 class Enemy final : public sf::RectangleShape{
     public:
     Enemy(float x, float y);
-    ~Enemy();
+    ~Enemy() override;
+
 
     void update(float delta, const Player& player);
 

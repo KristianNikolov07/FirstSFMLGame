@@ -1,20 +1,9 @@
 #include "Game.h"
 
-#include "EnemyManager.h"
-#include "Timer.h"
 
-
-Player player(350, 600);
-
-EnemyManager enemy_manager;
-
-sf::Font font("assets/fonts/Arialn.ttf");
-Timer timer(font, "0", 30);
-
-Game::Game() {
+Game::Game(): player(400, 500), timer(sf::Font("assets/fonts/Arialn.ttf"), "0", 30) {
     window.create(sf::VideoMode({800, 800}), "SFML Game", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
-
 }
 
 Game::~Game() {

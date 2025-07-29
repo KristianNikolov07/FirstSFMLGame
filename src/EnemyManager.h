@@ -1,6 +1,9 @@
 #pragma once
-#include "Player.h"
 #include <vector>
+#include <SFML/Graphics.hpp>
+
+class Player;
+class Enemy;
 
 class EnemyManager {
     public:

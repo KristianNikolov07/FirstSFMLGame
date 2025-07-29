@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+
+#include "EnemyManager.h"
 #include "Player.h"
-#include "Enemy.h"
 #include "Timer.h"
 
 class Game {
@@ -19,5 +20,9 @@ class Game {
     sf::RenderWindow window;
 
     sf::Clock clock;
+
+    Player player;
+    EnemyManager enemy_manager;
+    Timer timer;
 
 };

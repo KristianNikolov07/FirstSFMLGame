@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include<iostream>
 
+#include "Player.h"
 
 Enemy::Enemy(float x, float y) {
     setSize({size, size});
