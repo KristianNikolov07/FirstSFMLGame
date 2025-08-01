@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-Timer::Timer(): font("assets/fonts/Arialn.ttf"), text(font, "00:00.00", 30) {
+Timer::Timer(): font("assets/fonts/arial.ttf"), text(font, "00:00.00", 30) {
     text.setPosition({350, 0});
 }
 

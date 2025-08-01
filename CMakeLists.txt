@@ -24,6 +24,7 @@ add_executable(main src/main.cpp
         src/Timer.cpp
         src/Timer.h
         src/EnemyManager.cpp
-        src/EnemyManager.h)
+        src/EnemyManager.h
+)
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)
