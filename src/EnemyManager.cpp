@@ -3,6 +3,7 @@
 #include <ctime>
 
 #include "Enemy.h"
+#include "Game.h"
 
 EnemyManager::EnemyManager() {
     srand(time(0));
@@ -12,14 +13,14 @@ EnemyManager::~EnemyManager() {
 
 }
 
-void EnemyManager::update(float delta, const Player &player) {
+void EnemyManager::update(float delta, const Player &player, Game* game) {
     if (clock.getElapsedTime().asSeconds() > spawnDelay) {
         clock.restart();
         addEnemy();
     }
 
     for (Enemy& enemy : enemies) {
-        enemy.update(delta, player);
+        enemy.update(delta, player, game);
     }
 
     clearEnemies();
@@ -47,4 +48,8 @@ void EnemyManager::clearEnemies() {
         }
         i++;
     }
+}
+
+void EnemyManager::clearAllEnemies() {
+    enemies.clear();
 }

@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include<iostream>
 
+#include "Game.h"
 #include "Player.h"
 
 Enemy::Enemy(float x, float y) {
@@ -13,11 +14,11 @@ Enemy::~Enemy() {
 
 }
 
-void Enemy::update(const float delta, const Player& player) {
+void Enemy::update(const float delta, const Player& player, Game* game) {
     move({0, speed * delta});
 
     if (checkCollision(player)) {
-        std::cout << "Collision" << std::endl;
+        game->GameOver();
     }
 }
 

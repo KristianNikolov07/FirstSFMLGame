@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#include "Game.h"
+
 class Player; // <- Because c++ is dumb
 
 class Enemy final : public sf::RectangleShape{
@@ -9,7 +11,7 @@ class Enemy final : public sf::RectangleShape{
     ~Enemy() override;
 
 
-    void update(float delta, const Player& player);
+    void update(float delta, const Player& player, Game* game);
 
     private:
     float size = 80;

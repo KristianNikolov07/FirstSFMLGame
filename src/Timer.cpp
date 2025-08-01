@@ -50,3 +50,7 @@ void Timer::update(float delta) {
 void Timer::render(sf::RenderWindow &window) const {
     window.draw(text);
 }
+
+void Timer::reset() {
+    clock.restart();
+}

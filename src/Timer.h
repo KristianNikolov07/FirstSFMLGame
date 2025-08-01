@@ -10,6 +10,8 @@ class Timer{
     void update(float delta);
     void render(sf::RenderWindow& window) const;
 
+    void reset();
+
     private:
     sf::Clock clock;
     sf::Font font;
