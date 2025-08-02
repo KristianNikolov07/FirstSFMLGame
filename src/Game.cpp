@@ -1,7 +1,7 @@
 #include "Game.h"
 
 
-Game::Game(): player(400, 500){
+Game::Game(){
     window.create(sf::VideoMode({800, 800}), "SFML Game", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 }
@@ -20,18 +20,17 @@ void Game::HandleEvents() {
 
 void Game::Update() {
     const float delta = clock.restart().asSeconds();
+    if (getScene() == Scenes::GAME) {
+        gameScene.update(delta, window);
+    }
 
-    player.update(delta, window);
-    enemy_manager.update(delta, player);
-    timer.update(delta);
 }
 
 void Game::Render() {
     window.clear(sf::Color::Black);
-
-    window.draw(player);
-    enemy_manager.render(window);
-    timer.render(window);
+    if (getScene() == Scenes::GAME) {
+        gameScene.render(window);
+    }
 
     window.display();
 }
