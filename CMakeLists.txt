@@ -3,6 +3,8 @@ project(FirstSFMLGame)
 
 set(CMAKE_CXX_STANDARD 26)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include(FetchContent)
@@ -14,7 +16,7 @@ FetchContent_Declare(SFML
         SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp
+add_executable(main WIN32 src/main.cpp
         src/Game.cpp
         src/Game.h
         src/Player.cpp
@@ -34,6 +36,7 @@ add_executable(main src/main.cpp
         src/HPText.cpp
         src/HPText.h
 )
+
 file(COPY assets DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 target_compile_features(main PRIVATE cxx_std_17)
