@@ -1,16 +1,16 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
-#include "EnemyManager.h"
-#include "Player.h"
-#include "Timer.h"
 #include "Scenes/GameScene.h"
+#include "Scenes/GameOverScene.h"
+
 
 enum Scenes {
     MENU,
     GAME,
     GAME_OVER
 };
+
+inline sf::Font font("assets/fonts/arial.ttf");
 
 class Game {
     public:
@@ -24,7 +24,7 @@ class Game {
     sf::RenderWindow& getWindow() { return window; }
     Scenes getScene() const { return scene; }
 
-    void setScene(const Scenes _scene) { scene = _scene; }
+    void setScene(const Scenes _scene);
 
     private:
     sf::RenderWindow window;
@@ -33,4 +33,5 @@ class Game {
 
     //Scenes
     GameScene gameScene;
+    GameOverScene gameOverScene;
 };

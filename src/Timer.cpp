@@ -1,8 +1,9 @@
 #include "Timer.h"
+#include "Game.h"
 #include <iostream>
 
 
-Timer::Timer(): font("assets/fonts/arial.ttf"), text(font, "00:00.00", 30) {
+Timer::Timer(): text(font, "00:00.00", 30) {
     text.setPosition({350, 0});
 }
 
@@ -49,4 +50,8 @@ void Timer::update(float delta) {
 
 void Timer::render(sf::RenderWindow &window) const {
     window.draw(text);
+}
+
+void Timer::reset() {
+    clock.restart();
 }
