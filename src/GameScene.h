@@ -1,8 +1,8 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "../Player.h"
-#include "../EnemyManager.h"
-#include "../Timer.h"
+#include "Player.h"
+#include "EnemyManager.h"
+#include "Timer.h"
 
 class Game;
 

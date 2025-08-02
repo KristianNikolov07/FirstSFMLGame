@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#include "BlinkingText.h"
+
 class Game;
 
 class GameOverScene {
@@ -13,5 +15,5 @@ class GameOverScene {
 
     private:
     sf::Text GameOverText;
-    sf::Text PlayAgainText;
+    BlinkingText PlayAgainText;
 };

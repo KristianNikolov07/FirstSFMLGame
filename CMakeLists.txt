@@ -25,10 +25,12 @@ add_executable(main src/main.cpp
         src/Timer.h
         src/EnemyManager.cpp
         src/EnemyManager.h
-        src/Scenes/GameScene.cpp
-        src/Scenes/GameScene.h
-        src/Scenes/GameOverScene.cpp
-        src/Scenes/GameOverScene.h
+        src/GameScene.cpp
+        src/GameScene.h
+        src/GameOverScene.cpp
+        src/GameOverScene.h
+        src/BlinkingText.cpp
+        src/BlinkingText.h
 )
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)

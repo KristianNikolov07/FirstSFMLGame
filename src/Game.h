@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Scenes/GameScene.h"
-#include "Scenes/GameOverScene.h"
+#include "GameScene.h"
+#include "GameOverScene.h"
 
 
 enum Scenes {
