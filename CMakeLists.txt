@@ -31,6 +31,8 @@ add_executable(main src/main.cpp
         src/GameOverScene.h
         src/BlinkingText.cpp
         src/BlinkingText.h
+        src/HPText.cpp
+        src/HPText.h
 )
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Game.h"
 
 Player::Player(float x, float y) {
     setSize({size, size});
@@ -9,7 +10,7 @@ Player::~Player() {
 
 }
 
-void Player::update(const float delta, const sf::RenderWindow& window) {
+void Player::update(const float delta, const sf::RenderWindow& window, Game* game) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
         move({0, -speed * delta});
     }
@@ -35,4 +36,13 @@ void Player::update(const float delta, const sf::RenderWindow& window) {
     if (getPosition().y + size > window.getSize().y) {
         setPosition({getPosition().x, window.getSize().y - size});
     }
+
+    if (hp <= 0) {
+        game->setScene(Scenes::GAME_OVER);
+    }
+}
+
+void Player::reset() {
+    setPosition({300, 400});
+    hp = 1;
 }

@@ -12,7 +12,7 @@ EnemyManager::~EnemyManager() {
 
 }
 
-void EnemyManager::update(float delta, const Player &player, Game* game) {
+void EnemyManager::update(float delta, Player &player, Game* game) {
     if (clock.getElapsedTime().asSeconds() > spawnDelay) {
         clock.restart();
         addEnemy();

@@ -11,7 +11,7 @@ class Enemy final : public sf::RectangleShape{
     ~Enemy() override;
 
 
-    void update(float delta, const Player& player, Game* game);
+    void update(float delta, Player& player, Game* game);
 
     private:
     float size = 80;

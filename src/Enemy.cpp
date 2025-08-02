@@ -13,11 +13,12 @@ Enemy::~Enemy() {
 
 }
 
-void Enemy::update(const float delta, const Player& player, Game* game) {
+void Enemy::update(const float delta, Player& player, Game* game) {
     move({0, speed * delta});
 
     if (checkCollision(player)) {
-        game->setScene(Scenes::GAME_OVER);
+        player.removeHP();
+        setPosition({0, 1000});
     }
 }
 

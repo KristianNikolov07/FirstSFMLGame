@@ -11,7 +11,7 @@ class EnemyManager {
     EnemyManager();
     ~EnemyManager();
 
-    void update(float delta, const Player& player, Game* game);
+    void update(float delta, Player& player, Game* game);
     void render(sf::RenderWindow& window);
 
     void reset();

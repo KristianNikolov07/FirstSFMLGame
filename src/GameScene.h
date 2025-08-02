@@ -2,6 +2,7 @@
 #include <SFML\Graphics.hpp>
 #include "Player.h"
 #include "EnemyManager.h"
+#include "HPText.h"
 #include "Timer.h"
 
 class Game;
@@ -18,6 +19,8 @@ public:
 
 private:
     Player player;
+    HPText hpText;
+
     EnemyManager enemy_manager;
     Timer timer;
 };
