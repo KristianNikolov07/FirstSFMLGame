@@ -34,5 +34,7 @@ add_executable(main src/main.cpp
         src/HPText.cpp
         src/HPText.h
 )
+file(COPY assets DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics)

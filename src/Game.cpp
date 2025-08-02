@@ -20,6 +20,7 @@ void Game::HandleEvents() {
 
 void Game::Update() {
     const float delta = clock.restart().asSeconds();
+
     if (getScene() == Scenes::GAME) {
         gameScene.update(delta, window, this);
     } else if (getScene() == Scenes::GAME_OVER) {
@@ -30,6 +31,7 @@ void Game::Update() {
 
 void Game::Render() {
     window.clear(sf::Color::Black);
+
     if (getScene() == Scenes::GAME) {
         gameScene.render(window);
     } else if (getScene() == Scenes::GAME_OVER) {
