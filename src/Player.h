@@ -12,7 +12,7 @@ class Player final : public sf::RectangleShape {
     int getHP(){return hp;}
 
     void addHP(int _hp = 1){hp += _hp;}
-    void removeHP(int _hp = 1){hp -= _hp;}
+    void removeHP(int _hp, Game* game);
 
     void reset();
 

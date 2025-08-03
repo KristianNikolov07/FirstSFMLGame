@@ -17,7 +17,7 @@ void Enemy::update(const float delta, Player& player, Game* game) {
     move({0, speed * delta});
 
     if (checkCollision(player)) {
-        player.removeHP();
+        player.removeHP(1, game);
         setPosition({0, 1000});
     }
 }

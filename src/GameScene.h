@@ -1,11 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player.h"
-#include "EnemyManager.h"
 #include "HPText.h"
 #include "Timer.h"
 
 class Game;
+class Enemy;
 
 class GameScene {
 public:
@@ -21,6 +21,11 @@ private:
     Player player;
     HPText hpText;
 
-    EnemyManager enemy_manager;
     Timer timer;
+
+    std::vector<Enemy> enemies;
+    void addEnemy();
+    void clearEnemies();
+    sf::Clock clock;
+    float spawnDelay = 1.0;
 };

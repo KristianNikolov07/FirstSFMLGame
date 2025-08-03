@@ -36,7 +36,10 @@ void Player::update(const float delta, const sf::RenderWindow& window, Game* gam
     if (getPosition().y + size > window.getSize().y) {
         setPosition({getPosition().x, window.getSize().y - size});
     }
+}
 
+void Player::removeHP(int _hp, Game *game) {
+    hp -= _hp;
     if (hp <= 0) {
         game->setScene(Scenes::GAME_OVER);
     }

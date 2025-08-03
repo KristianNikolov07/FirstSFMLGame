@@ -3,7 +3,7 @@ project(FirstSFMLGame)
 
 set(CMAKE_CXX_STANDARD 26)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -25,8 +25,6 @@ add_executable(main WIN32 src/main.cpp
         src/Enemy.h
         src/Timer.cpp
         src/Timer.h
-        src/EnemyManager.cpp
-        src/EnemyManager.h
         src/GameScene.cpp
         src/GameScene.h
         src/GameOverScene.cpp
