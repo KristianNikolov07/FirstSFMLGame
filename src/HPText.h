@@ -1,6 +1,5 @@
 #pragma once
-#include "SFML/Graphics.hpp"
-
+#include <SFML/Graphics.hpp>
 class Player;
 
 class HPText: public sf::Text{
