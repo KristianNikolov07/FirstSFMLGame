@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+
+#include "Heart.h"
 #include "Player.h"
 #include "HPText.h"
 #include "Timer.h"
@@ -20,12 +22,15 @@ public:
 private:
     Player player;
     HPText hpText;
-
     Timer timer;
-
     std::vector<Enemy> enemies;
+    std::vector<Heart> hearts;
+
     void addEnemy();
     void clearEnemies();
+    void addHeart();
+    void clearHearts();
+
     sf::Clock clock;
     float spawnDelay = 1.0;
 };

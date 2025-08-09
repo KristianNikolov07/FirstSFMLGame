@@ -1,0 +1,32 @@
+#include "Heart.h"
+#include "Player.h"
+
+Heart::Heart(float x, float y): texture("assets/textures/heart.png"), sprite(texture){
+    sprite.setScale({0.3f, 0.3});
+    sprite.setPosition({x, y});
+}
+
+Heart::~Heart() {
+
+}
+
+
+void Heart::update(float delta, Player& player) {
+    sprite.move({0, speed * delta});
+    if (checkCollision(player)) {
+        player.addHP();
+        sprite.setPosition({0, 1000});
+    }
+}
+
+void Heart::render(sf::RenderWindow &window) {
+    window.draw(sprite);
+}
+
+
+bool Heart::checkCollision(Player& player) {
+    if (player.getGlobalBounds().findIntersection(sprite.getGlobalBounds())) {
+        return true;
+    }
+    return false;
+}

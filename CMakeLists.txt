@@ -33,7 +33,10 @@ add_executable(main WIN32 src/main.cpp
         src/BlinkingText.h
         src/HPText.cpp
         src/HPText.h
+        src/Heart.cpp
+        src/Heart.h
 )
+
 
 file(COPY assets DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 

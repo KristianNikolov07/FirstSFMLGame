@@ -3,7 +3,7 @@
 
 #include "Game.h"
 
-class Player; // <- Because c++ is dumb
+class Player;
 
 class Enemy final : public sf::RectangleShape{
     public:
