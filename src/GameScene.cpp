@@ -17,13 +17,20 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
     //Spawning stuff
     if (clock.getElapsedTime().asSeconds() > spawnDelay) {
         clock.restart();
-        addEnemy();
-        addHeart();
+        const int randNum = rand() % 50;
+        if (randNum == 1) {
+            addHeart();
+        }
+        else {
+            addEnemy();
+        }
+
+
     }
 
     //Update hearts
-    for (Heart& heart : hearts) {
-        heart.update(delta, player);
+    for (auto heart : hearts) {
+        heart->update(delta, player);
     }
     clearHearts();
 
@@ -41,8 +48,8 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
 void GameScene::render(sf::RenderWindow &window) {
     window.draw(player);
 
-    for (Heart& heart: hearts) {
-        heart.render(window);
+    for (auto heart: hearts) {
+        heart->render(window);
     }
 
     for (Enemy& enemy : enemies) {
@@ -85,14 +92,15 @@ void GameScene::addHeart() {
     const int randNum = rand() % 10;
     const int x = randNum * 80;
 
-    const Heart heart(x, -120);
+    auto* heart = new Heart(x, -120);
     hearts.push_back(heart);
 }
 
 void GameScene::clearHearts() {
     int i = 0;
-    for (Heart& heart : hearts) {
-        if (heart.getPosition().y > 850) {
+    for (auto heart : hearts) {
+        if (heart->getPosition().y > 850) {
+            delete heart;
             hearts.erase(hearts.begin() + i);
         }
         i++;

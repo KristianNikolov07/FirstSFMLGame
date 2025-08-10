@@ -2,7 +2,7 @@
 #include "Player.h"
 
 Heart::Heart(float x, float y): texture("assets/textures/heart.png"), sprite(texture){
-    sprite.setScale({0.3f, 0.3});
+    sprite.setScale({0.2f, 0.2f});
     sprite.setPosition({x, y});
 }
 

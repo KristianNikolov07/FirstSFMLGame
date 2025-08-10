@@ -24,7 +24,7 @@ private:
     HPText hpText;
     Timer timer;
     std::vector<Enemy> enemies;
-    std::vector<Heart> hearts;
+    std::vector<Heart*> hearts;
 
     void addEnemy();
     void clearEnemies();
