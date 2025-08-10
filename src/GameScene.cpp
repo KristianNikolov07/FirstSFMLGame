@@ -5,7 +5,7 @@
 
 #include "Enemy.h"
 
-GameScene::GameScene(): player(400, 500) {
+GameScene::GameScene(): player(375, 500) {
     srand(time(0));
 }
 

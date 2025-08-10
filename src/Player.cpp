@@ -46,6 +46,6 @@ void Player::removeHP(int _hp, Game *game) {
 }
 
 void Player::reset() {
-    setPosition({300, 400});
+    setPosition({375, 500});
     hp = 1;
 }
