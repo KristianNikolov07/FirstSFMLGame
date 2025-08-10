@@ -17,8 +17,8 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
     //Spawning stuff
     if (clock.getElapsedTime().asSeconds() > spawnDelay) {
         clock.restart();
-        const int randNum = rand() % 50;
-        if (randNum == 1) {
+        const int randNum = rand() % 100;
+        if (randNum <= heartSpawnChance) {
             addHeart();
         }
         else {

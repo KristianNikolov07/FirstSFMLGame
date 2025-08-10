@@ -12,6 +12,10 @@ Heart::~Heart() {
 
 
 void Heart::update(float delta, Player& player) {
+    //Spinning
+    sprite.rotate(sf::degrees(15 * delta));
+
+    //Movement
     sprite.move({0, speed * delta});
     if (checkCollision(player)) {
         player.addHP();

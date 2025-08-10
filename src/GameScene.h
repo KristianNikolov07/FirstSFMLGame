@@ -20,17 +20,24 @@ public:
     void reset();
 
 private:
+    //Objects
     Player player;
     HPText hpText;
     Timer timer;
     std::vector<Enemy> enemies;
     std::vector<Heart*> hearts;
+    sf::Clock clock;
 
+    //Properties
+    float spawnDelay = 1.0;
+    int heartSpawnChance = 10;
+
+    //Functions
     void addEnemy();
     void clearEnemies();
     void addHeart();
     void clearHearts();
 
-    sf::Clock clock;
-    float spawnDelay = 1.0;
+
+
 };
