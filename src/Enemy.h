@@ -7,7 +7,7 @@ class Player;
 
 class Enemy {
 public:
-    Enemy(float x, float y);
+    Enemy(float x, float y, float _speed = 200 );
     ~Enemy();
 
     void update(float delta, Player& player, Game* game);

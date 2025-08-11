@@ -3,10 +3,11 @@
 
 #include "Player.h"
 
-Enemy::Enemy(float x, float y) {
+Enemy::Enemy(float x, float y, float _speed) {
     shape.setSize({size, size});
     shape.setPosition({x, y});
     shape.setFillColor(sf::Color::Red);
+    speed = _speed;
 }
 
 Enemy::~Enemy() {

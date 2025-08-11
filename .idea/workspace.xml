@@ -42,11 +42,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Cleaned up the player code">
+    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Cleaned up the enemy code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Enemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameScene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +210,7 @@
       <workItem from="1754243241871" duration="5102000" />
       <workItem from="1754758211894" duration="1926000" />
       <workItem from="1754760289163" duration="3735000" />
-      <workItem from="1754901432330" duration="1207000" />
+      <workItem from="1754901432330" duration="2243000" />
     </task>
     <task id="LOCAL-00001" summary="Linux fix">
       <option name="closed" value="true" />
@@ -258,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754903334191</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cleaned up the enemy code">
+      <option name="closed" value="true" />
+      <created>1754903571835</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1754903571835</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +285,7 @@
     <MESSAGE value="Fixed the heart texture and improved the heart summoning system" />
     <MESSAGE value="Fixed the player start position" />
     <MESSAGE value="Cleaned up the player code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up the player code" />
+    <MESSAGE value="Cleaned up the enemy code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up the enemy code" />
   </component>
 </project>

@@ -15,6 +15,19 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
     player.update(delta, window, game);
 
     //Spawning stuff
+    float enemySpeed = 200;
+    float enemyAmount = 1;
+
+    if (timer.getSeconds() > 30) {
+        enemySpeed = 300;
+        enemyAmount = 2;
+    }
+
+    if (timer.getSeconds() > 60) {
+        enemySpeed = 500;
+        enemyAmount = 3;
+    }
+
     if (clock.getElapsedTime().asSeconds() > spawnDelay) {
         clock.restart();
         const int randNum = rand() % 100;
@@ -22,7 +35,7 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
             addHeart();
         }
         else {
-            addEnemy();
+            addEnemy(enemySpeed, enemyAmount);
         }
 
 
@@ -70,12 +83,14 @@ void GameScene::reset() {
     clock.restart();
 }
 
-void GameScene::addEnemy() {
-    const int randNum = rand() % 10;
-    const int x = randNum * 80;
+void GameScene::addEnemy(float speed, int amount) {
+    for (int i = 0; i < amount; i++) {
+        const int randNum = rand() % 10;
+        const int x = randNum * 80;
+        const Enemy enemy(x, -120, speed);
+        enemies.push_back(enemy);
+    }
 
-    const Enemy enemy(x, -120);
-    enemies.push_back(enemy);
 }
 
 void GameScene::clearEnemies() {

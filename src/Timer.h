@@ -11,7 +11,11 @@ class Timer{
     void render(sf::RenderWindow& window) const;
     void reset();
 
+    float getSeconds() const { return clock.getElapsedTime().asSeconds(); }
+
     private:
     sf::Clock clock;
     sf::Text text;
+
+
 };

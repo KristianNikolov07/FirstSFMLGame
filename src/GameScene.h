@@ -33,7 +33,7 @@ private:
     int heartSpawnChance = 10;
 
     //Functions
-    void addEnemy();
+    void addEnemy(float speed, int amount = 1);
     void clearEnemies();
     void addHeart();
     void clearHearts();
