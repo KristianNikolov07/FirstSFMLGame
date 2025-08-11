@@ -24,7 +24,7 @@ private:
     Player player;
     HPText hpText;
     Timer timer;
-    std::vector<Enemy> enemies;
+    std::vector<Enemy*> enemies;
     std::vector<Heart*> hearts;
     sf::Clock clock;
 

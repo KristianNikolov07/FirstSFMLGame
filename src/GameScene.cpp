@@ -25,8 +25,8 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
     clearHearts();
 
     //Update enemies
-    for (Enemy& enemy : enemies) {
-        enemy.update(delta, player, game);
+    for (Enemy* enemy : enemies) {
+        enemy->update(delta, player, game);
     }
     clearEnemies();
 
@@ -42,8 +42,8 @@ void GameScene::render(sf::RenderWindow &window) {
         heart->render(window);
     }
 
-    for (Enemy& enemy : enemies) {
-        enemy.render(window);
+    for (Enemy* enemy : enemies) {
+        enemy->render(window);
     }
 
     window.draw(hpText);
@@ -94,7 +94,7 @@ void GameScene::addEnemy(float speed, int amount) {
     for (int i = 0; i < amount; i++) {
         const int randNum = rand() % 10;
         const int x = randNum * 80;
-        const Enemy enemy(x, -120, speed);
+        auto * enemy =  new Enemy(x, -120, speed);
         enemies.push_back(enemy);
     }
 
@@ -102,8 +102,9 @@ void GameScene::addEnemy(float speed, int amount) {
 
 void GameScene::clearEnemies() {
     int i = 0;
-    for (Enemy& enemy : enemies) {
-        if (enemy.getPosition().y > 850) {
+    for (Enemy* enemy : enemies) {
+        if (enemy->getPosition().y > 850) {
+            delete enemy;
             enemies.erase(enemies.begin() + i);
         }
         i++;
