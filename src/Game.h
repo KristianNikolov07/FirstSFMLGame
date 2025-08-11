@@ -10,7 +10,7 @@ enum Scenes {
     GAME_OVER
 };
 
-inline sf::Font font("assets/fonts/arial.ttf");
+inline sf::Font font("assets/fonts/RedAlert.ttf");
 
 class Game {
     public:
