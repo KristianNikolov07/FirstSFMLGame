@@ -4,9 +4,9 @@
 #include "Player.h"
 
 Enemy::Enemy(float x, float y) {
-    setSize({size, size});
-    setPosition({x, y});
-    setFillColor(sf::Color::Red);
+    shape.setSize({size, size});
+    shape.setPosition({x, y});
+    shape.setFillColor(sf::Color::Red);
 }
 
 Enemy::~Enemy() {
@@ -14,16 +14,20 @@ Enemy::~Enemy() {
 }
 
 void Enemy::update(const float delta, Player& player, Game* game) {
-    move({0, speed * delta});
+    shape.move({0, speed * delta});
 
     if (checkCollision(player)) {
         player.removeHP(1, game);
-        setPosition({0, 1000});
+        shape.setPosition({0, 1000});
     }
 }
 
+void Enemy::render(sf::RenderWindow& window) {
+    window.draw(shape);
+}
+
 bool Enemy::checkCollision(Player &player) const {
-    if (getGlobalBounds().findIntersection(player.getGlobalBounds())) {
+    if (shape.getGlobalBounds().findIntersection(player.getGlobalBounds())) {
         return true;
     }
     return false;

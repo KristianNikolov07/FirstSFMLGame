@@ -53,7 +53,7 @@ void GameScene::render(sf::RenderWindow &window) {
     }
 
     for (Enemy& enemy : enemies) {
-        window.draw(enemy);
+        enemy.render(window);
     }
 
     window.draw(hpText);

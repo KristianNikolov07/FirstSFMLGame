@@ -5,17 +5,20 @@
 
 class Player;
 
-class Enemy final : public sf::RectangleShape{
-    public:
+class Enemy {
+public:
     Enemy(float x, float y);
-    ~Enemy() override;
-
+    ~Enemy();
 
     void update(float delta, Player& player, Game* game);
+    void render(sf::RenderWindow& window);
 
-    private:
+    sf::Vector2f getPosition() const { return shape.getPosition(); }
+
+private:
     float size = 80;
     float speed = 200;
+    sf::RectangleShape shape;
 
     bool checkCollision(Player& player) const;
 };
