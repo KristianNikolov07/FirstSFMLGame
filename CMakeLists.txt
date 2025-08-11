@@ -18,10 +18,6 @@ add_executable(main WIN32 src/main.cpp
         src/Enemy.h
         src/Timer.cpp
         src/Timer.h
-        src/GameScene.cpp
-        src/GameScene.h
-        src/GameOverScene.cpp
-        src/GameOverScene.h
         src/BlinkingText.cpp
         src/BlinkingText.h
         src/HPText.cpp

@@ -1,4 +1,7 @@
 #include "Player.h"
+
+#include <iostream>
+
 #include "Game.h"
 
 Player::Player(float x, float y) {
@@ -45,7 +48,7 @@ void Player::render(sf::RenderWindow& window) {
 void Player::removeHP(int _hp, Game *game) {
     hp -= _hp;
     if (hp <= 0) {
-        game->setScene(Scenes::GAME_OVER);
+        std::cout<<"Game Over"<<std::endl;
     }
 }
 

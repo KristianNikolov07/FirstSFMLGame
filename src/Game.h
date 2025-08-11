@@ -1,15 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "GameScene.h"
-#include "GameOverScene.h"
 
+#include "HPText.h"
+#include "Player.h"
+#include "Timer.h"
 
-enum Scenes {
-    MENU,
-    GAME,
-    GAME_OVER
-};
-
+class Heart;
+class Enemy;
 inline sf::Font font("assets/fonts/RedAlert.ttf");
 
 class Game {
@@ -20,18 +17,32 @@ class Game {
     void HandleEvents();
     void Update();
     void Render();
+    void reset();
 
     sf::RenderWindow& getWindow() { return window; }
-    Scenes getScene() const { return scene; }
-
-    void setScene(const Scenes _scene);
 
     private:
     sf::RenderWindow window;
-    Scenes scene = Scenes::GAME;
     sf::Clock clock;
+    sf::Clock spawnClock;
 
-    //Scenes
-    GameScene gameScene;
-    GameOverScene gameOverScene;
+    //Objects
+    Player player;
+    HPText hpText;
+    Timer timer;
+    std::vector<Enemy*> enemies;
+    std::vector<Heart*> hearts;
+
+    //Properties
+    float enemySpeed = 200;
+    float enemyAmount = 1;
+    float spawnDelay = 1.0;
+    int heartSpawnChance = 5;
+
+    //Functions
+    void summoner();
+    void addEnemy(float speed, int amount = 1);
+    void clearEnemies();
+    void addHeart();
+    void clearHearts();
 };
