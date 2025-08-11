@@ -12,34 +12,11 @@ GameScene::GameScene(): player(375, 500) {
 GameScene::~GameScene() = default;
 
 void GameScene::update(const float delta, const sf::RenderWindow& window, Game* game) {
+    //Player
     player.update(delta, window, game);
 
     //Spawning stuff
-    float enemySpeed = 200;
-    float enemyAmount = 1;
-
-    if (timer.getSeconds() > 30) {
-        enemySpeed = 300;
-        enemyAmount = 2;
-    }
-
-    if (timer.getSeconds() > 60) {
-        enemySpeed = 500;
-        enemyAmount = 3;
-    }
-
-    if (clock.getElapsedTime().asSeconds() > spawnDelay) {
-        clock.restart();
-        const int randNum = rand() % 100;
-        if (randNum <= heartSpawnChance) {
-            addHeart();
-        }
-        else {
-            addEnemy(enemySpeed, enemyAmount);
-        }
-
-
-    }
+    summoner();
 
     //Update hearts
     for (auto heart : hearts) {
@@ -82,6 +59,36 @@ void GameScene::reset() {
     enemies.clear();
     clock.restart();
 }
+
+void GameScene::summoner() {
+
+    if (timer.getSeconds() > 30) {
+        enemySpeed = 300;
+        enemyAmount = 2;
+    }
+
+    if (timer.getSeconds() > 60) {
+        enemySpeed = 500;
+        enemyAmount = 3;
+    }
+
+    if (timer.getSeconds() > 90) {
+        spawnDelay = 0.5;
+        enemySpeed = 400;
+        enemyAmount = 1;
+    }
+
+    if (clock.getElapsedTime().asSeconds() > spawnDelay) {
+        clock.restart();
+        const int randNum = rand() % 100;
+        if (randNum <= heartSpawnChance) {
+            addHeart();
+        }
+        addEnemy(enemySpeed, enemyAmount);
+
+    }
+}
+
 
 void GameScene::addEnemy(float speed, int amount) {
     for (int i = 0; i < amount; i++) {

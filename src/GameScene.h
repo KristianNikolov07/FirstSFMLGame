@@ -29,10 +29,13 @@ private:
     sf::Clock clock;
 
     //Properties
+    float enemySpeed = 200;
+    float enemyAmount = 1;
     float spawnDelay = 1.0;
-    int heartSpawnChance = 10;
+    int heartSpawnChance = 5;
 
     //Functions
+    void summoner();
     void addEnemy(float speed, int amount = 1);
     void clearEnemies();
     void addHeart();
