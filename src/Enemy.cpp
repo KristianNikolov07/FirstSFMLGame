@@ -22,7 +22,7 @@ void Enemy::update(const float delta, Player& player, Game* game) {
     }
 }
 
-bool Enemy::checkCollision(const Player &player) const {
+bool Enemy::checkCollision(Player &player) const {
     if (getGlobalBounds().findIntersection(player.getGlobalBounds())) {
         return true;
     }

@@ -17,5 +17,5 @@ class Enemy final : public sf::RectangleShape{
     float size = 80;
     float speed = 200;
 
-    bool checkCollision(const Player& player) const;
+    bool checkCollision(Player& player) const;
 };

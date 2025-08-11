@@ -2,8 +2,8 @@
 #include "Game.h"
 
 Player::Player(float x, float y) {
-    setSize({size, size});
-    setPosition({x, y});
+    shape.setSize({size, size});
+    shape.setPosition({x, y});
 }
 
 Player::~Player() {
@@ -12,30 +12,34 @@ Player::~Player() {
 
 void Player::update(const float delta, const sf::RenderWindow& window, Game* game) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
-        move({0, -speed * delta});
+        shape.move({0, -speed * delta});
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
-        move({0, speed * delta});
+        shape.move({0, speed * delta});
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
-        move({-speed * delta, 0});
+        shape.move({-speed * delta, 0});
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
-        move({speed * delta, 0});
+        shape.move({speed * delta, 0});
     }
 
-    if (getPosition().x < 0) {
-        setPosition({0, getPosition().y});
+    if (shape.getPosition().x < 0) {
+        shape.setPosition({0, shape.getPosition().y});
     }
-    if (getPosition().y < 0) {
-        setPosition({getPosition().x, 0});
+    if (shape.getPosition().y < 0) {
+        shape.setPosition({shape.getPosition().x, 0});
     }
-    if (getPosition().x + size > window.getSize().x) {
-        setPosition({window.getSize().x - size, getPosition().y});
+    if (shape.getPosition().x + size > window.getSize().x) {
+        shape.setPosition({window.getSize().x - size, shape.getPosition().y});
     }
-    if (getPosition().y + size > window.getSize().y) {
-        setPosition({getPosition().x, window.getSize().y - size});
+    if (shape.getPosition().y + size > window.getSize().y) {
+        shape.setPosition({shape.getPosition().x, window.getSize().y - size});
     }
+}
+
+void Player::render(sf::RenderWindow& window) {
+    window.draw(shape);
 }
 
 void Player::removeHP(int _hp, Game *game) {
@@ -46,6 +50,6 @@ void Player::removeHP(int _hp, Game *game) {
 }
 
 void Player::reset() {
-    setPosition({375, 500});
+    shape.setPosition({375, 500});
     hp = 1;
 }

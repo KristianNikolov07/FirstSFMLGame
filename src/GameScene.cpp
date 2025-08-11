@@ -46,7 +46,7 @@ void GameScene::update(const float delta, const sf::RenderWindow& window, Game* 
 }
 
 void GameScene::render(sf::RenderWindow &window) {
-    window.draw(player);
+    player.render(window);
 
     for (auto heart: hearts) {
         heart->render(window);
