@@ -24,6 +24,8 @@ add_executable(main WIN32 src/main.cpp
         src/HPText.h
         src/Heart.cpp
         src/Heart.h
+        src/GameOverScreen.cpp
+        src/GameOverScreen.h
 )
 
 

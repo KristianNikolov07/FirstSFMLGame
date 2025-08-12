@@ -48,7 +48,7 @@ void Player::render(sf::RenderWindow& window) {
 void Player::removeHP(int _hp, Game *game) {
     hp -= _hp;
     if (hp <= 0) {
-        std::cout<<"Game Over"<<std::endl;
+        game->setGameOver();
     }
 }
 

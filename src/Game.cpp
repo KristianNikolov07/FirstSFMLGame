@@ -3,10 +3,13 @@
 #include "Heart.h"
 
 Game::Game(): player(375, 500){
+    //Window
     window.create(sf::VideoMode({800, 800}), "SFML Game", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 
+    //Seed
     srand(time(0));
+
 }
 
 Game::~Game() {
@@ -24,27 +27,33 @@ void Game::HandleEvents() {
 void Game::Update() {
     const float delta = clock.restart().asSeconds();
 
-    //Player
-    player.update(delta, window, this);
+    if (gameOver == false) {
+        //Player
+        player.update(delta, window, this);
 
-    //Spawning stuff
-    summoner();
+        //Spawning stuff
+        summoner();
 
-    //Update hearts
-    for (auto heart : hearts) {
-        heart->update(delta, player);
+        //Update hearts
+        for (auto heart : hearts) {
+            heart->update(delta, player);
+        }
+        clearHearts();
+
+        //Update enemies
+        for (Enemy* enemy : enemies) {
+            enemy->update(delta, player, this);
+        }
+        clearEnemies();
+
+
+        hpText.update(player);
+        timer.update(delta);
     }
-    clearHearts();
-
-    //Update enemies
-    for (Enemy* enemy : enemies) {
-        enemy->update(delta, player, this);
+    else {
+        gameOverScreen.update(delta, this);
     }
-    clearEnemies();
 
-
-    hpText.update(player);
-    timer.update(delta);
 
 }
 
@@ -64,6 +73,11 @@ void Game::Render() {
     window.draw(hpText);
     timer.render(window);
 
+    if (gameOver == true) {
+        gameOverScreen.render(window);
+    }
+
+
     window.display();
 }
 
@@ -73,6 +87,7 @@ void Game::reset() {
 
     enemies.clear();
     clock.restart();
+    gameOver = false;
 }
 
 void Game::summoner() {

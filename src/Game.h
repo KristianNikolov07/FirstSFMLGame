@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#include "BlinkingText.h"
+#include "GameOverScreen.h"
 #include "HPText.h"
 #include "Player.h"
 #include "Timer.h"
@@ -20,11 +22,16 @@ class Game {
     void reset();
 
     sf::RenderWindow& getWindow() { return window; }
+    bool isGameOver() { return gameOver; }
+
+    void setGameOver() { gameOver = true; }
 
     private:
     sf::RenderWindow window;
     sf::Clock clock;
     sf::Clock spawnClock;
+
+    bool gameOver = false;
 
     //Objects
     Player player;
@@ -32,6 +39,8 @@ class Game {
     Timer timer;
     std::vector<Enemy*> enemies;
     std::vector<Heart*> hearts;
+    GameOverScreen gameOverScreen;
+
 
     //Properties
     float enemySpeed = 200;
