@@ -42,14 +42,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Removed scenes">
-      <change afterPath="$PROJECT_DIR$/src/GameOverScreen.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameOverScreen.h" afterDir="false" />
+    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Added a game over screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +220,7 @@
       <workItem from="1754760289163" duration="3735000" />
       <workItem from="1754901432330" duration="4296000" />
       <workItem from="1754939636251" duration="3172000" />
-      <workItem from="1755032882825" duration="1689000" />
+      <workItem from="1755032882825" duration="2451000" />
     </task>
     <task id="LOCAL-00001" summary="Linux fix">
       <option name="closed" value="true" />
@@ -330,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754941185200</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added a game over screen">
+      <option name="closed" value="true" />
+      <created>1755034608694</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1755034608694</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +357,7 @@
     <MESSAGE value="SFML Library is now local, so there is no need for an internet connection when configuring cmake" />
     <MESSAGE value="Changed the font" />
     <MESSAGE value="Removed scenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed scenes" />
+    <MESSAGE value="Added a game over screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a game over screen" />
   </component>
 </project>

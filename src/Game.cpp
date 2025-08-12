@@ -28,6 +28,7 @@ void Game::Update() {
     const float delta = clock.restart().asSeconds();
 
     if (gameOver == false) {
+
         //Player
         player.update(delta, window, this);
 
@@ -82,10 +83,24 @@ void Game::Render() {
 }
 
 void Game::reset() {
+    enemySpeed = defaultEnemySpeed;
+    enemyAmount = defaultEnemyAmount;
+    spawnDelay = defaultSpawnDelay;
+    heartSpawnChance = defaultHeartSpawnChance;
+
     player.reset();
     timer.reset();
 
+    for (Enemy* enemy : enemies) {
+        delete enemy;
+    }
     enemies.clear();
+
+    for (Heart* heart: hearts) {
+        delete heart;
+    }
+    hearts.clear();
+
     clock.restart();
     gameOver = false;
 }

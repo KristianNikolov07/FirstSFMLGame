@@ -43,10 +43,15 @@ class Game {
 
 
     //Properties
-    float enemySpeed = 200;
-    float enemyAmount = 1;
-    float spawnDelay = 1.0;
-    int heartSpawnChance = 5;
+    float defaultEnemySpeed = 200;
+    float defaultEnemyAmount = 1;
+    float defaultSpawnDelay = 1.0;
+    int defaultHeartSpawnChance = 5;
+
+    float enemySpeed = defaultEnemySpeed;
+    float enemyAmount = defaultEnemyAmount;
+    float spawnDelay = defaultSpawnDelay;
+    int heartSpawnChance = defaultHeartSpawnChance;
 
     //Functions
     void summoner();
