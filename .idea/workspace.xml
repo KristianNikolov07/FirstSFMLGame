@@ -42,8 +42,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Added invinsibilityPowerups">
-      <change afterPath="$PROJECT_DIR$/src/ResourceManager.h" afterDir="false" />
+    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Added Resource Manager and cleanup">
+      <change afterPath="$PROJECT_DIR$/assets/sound/hit.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sound/pickup.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/CMakeLists.txt" afterDir="false" />
@@ -52,14 +53,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/ogg-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/ogg-src/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/lib/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/lib/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlinkingText.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlinkingText.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameOverScreen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameOverScreen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HPText.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/HPText.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Heart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heart.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Heart.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Heart.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InvinsibilityPowerup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InvinsibilityPowerup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResourceManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/ResourceManager.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +235,7 @@
       <workItem from="1755032882825" duration="2726000" />
       <workItem from="1755078254028" duration="723000" />
       <workItem from="1755079007758" duration="4845000" />
-      <workItem from="1755101554688" duration="1480000" />
+      <workItem from="1755101554688" duration="2281000" />
     </task>
     <task id="LOCAL-00001" summary="Linux fix">
       <option name="closed" value="true" />
@@ -368,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755083271916</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added Resource Manager and cleanup">
+      <option name="closed" value="true" />
+      <created>1755103076742</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1755103076742</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +399,7 @@
     <MESSAGE value="Added a game over screen" />
     <MESSAGE value="Pattern now reset after a game over, the hearts get cleared after a game over and fixed a potential memory leak(I think)." />
     <MESSAGE value="Added invinsibilityPowerups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added invinsibilityPowerups" />
+    <MESSAGE value="Added Resource Manager and cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Resource Manager and cleanup" />
   </component>
 </project>

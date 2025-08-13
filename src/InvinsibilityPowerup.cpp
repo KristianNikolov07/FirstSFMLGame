@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Player.h"
+#include "ResourceManager.h"
 
 InvinsibilityPowerup::InvinsibilityPowerup(float x, float y) {
     sprite.setSize({size, size});
@@ -19,6 +20,7 @@ void InvinsibilityPowerup::update(float delta, Player& player) {
     if (CheckCollision(player)) {
         sprite.setPosition({0, 1200});
         player.startInvinsibility();
+        ResourceManager::pickupSound.play();
     }
 }
 

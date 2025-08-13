@@ -18,9 +18,12 @@ void Heart::update(float delta, Player& player) {
 
     //Movement
     sprite.move({0, speed * delta});
+
+    //Collision
     if (checkCollision(player)) {
         player.addHP();
         sprite.setPosition({0, 1000});
+        ResourceManager::pickupSound.play();
     }
 }
 

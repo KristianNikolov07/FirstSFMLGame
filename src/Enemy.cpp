@@ -2,6 +2,7 @@
 #include<iostream>
 
 #include "Player.h"
+#include "ResourceManager.h"
 
 Enemy::Enemy(float x, float y, float _speed) {
     shape.setSize({size, size});
@@ -20,6 +21,7 @@ void Enemy::update(const float delta, Player& player, Game* game) {
     if (checkCollision(player)) {
         player.removeHP(1, game);
         shape.setPosition({0, 1000});
+        ResourceManager::hitSound.play();
     }
 }
 
