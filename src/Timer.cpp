@@ -2,8 +2,10 @@
 #include "Game.h"
 #include <iostream>
 
+#include "ResourceManager.h"
 
-Timer::Timer(): text(font, "00:00.00", 30) {
+
+Timer::Timer(): text(ResourceManager::font, "00:00.00", 30) {
     text.setPosition({350, 0});
 }
 

@@ -10,7 +10,6 @@
 
 class Heart;
 class Enemy;
-inline sf::Font font("assets/fonts/RedAlert.ttf");
 
 class Game {
     public:
@@ -38,18 +37,18 @@ class Game {
     Player player;
     HPText hpText;
     Timer timer;
-    std::vector<Enemy*> enemies;
-    std::vector<Heart*> hearts;
-    std::vector<InvinsibilityPowerup*> invinsibilityPowerups;
+    std::vector<Enemy> enemies;
+    std::vector<Heart> hearts;
+    std::vector<InvinsibilityPowerup> invinsibilityPowerups;
     GameOverScreen gameOverScreen;
 
 
     //Properties
-    float defaultEnemySpeed = 200;
-    float defaultEnemyAmount = 1;
-    float defaultSpawnDelay = 1.0;
-    int defaultHeartSpawnChance = 10;
-    int defaultInvinsibilityPowerupSpawnChange = 5;
+    const float defaultEnemySpeed = 200;
+    const float defaultEnemyAmount = 1;
+    const float defaultSpawnDelay = 1.0;
+    const int defaultHeartSpawnChance = 10;
+    const int defaultInvinsibilityPowerupSpawnChange = 5;
 
     float enemySpeed = defaultEnemySpeed;
     float enemyAmount = defaultEnemyAmount;

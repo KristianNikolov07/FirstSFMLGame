@@ -14,7 +14,6 @@ public:
     sf::Vector2f getPosition() {return sprite.getPosition();}
 
 private:
-    sf::Texture texture;
     sf::Sprite sprite;
     float speed = 100;
 

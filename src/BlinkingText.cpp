@@ -3,8 +3,9 @@
 #include <iostream>
 
 #include "Game.h"
+#include "ResourceManager.h"
 
-BlinkingText::BlinkingText(float _delay, std::string text, int size): Text(font, text, size){
+BlinkingText::BlinkingText(float _delay, std::string text, int size): Text(ResourceManager::font, text, size){
     delay = _delay;
 }
 

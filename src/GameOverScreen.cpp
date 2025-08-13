@@ -1,7 +1,8 @@
 #include "GameOverScreen.h"
 #include "Game.h"
+#include "ResourceManager.h"
 
-GameOverScreen::GameOverScreen(): gameOverText(font, "Game Over", 70), playAgainText(0.5, "Press Enter to Play Again", 20) {
+GameOverScreen::GameOverScreen(): gameOverText(ResourceManager::font, "Game Over", 70), playAgainText(0.5, "Press Enter to Play Again", 20) {
     //Game Over Text
     gameOverText.setFillColor(sf::Color::Red);
     gameOverText.setPosition({250, 300});

@@ -26,6 +26,7 @@ add_executable(main WIN32 src/main.cpp
         src/GameOverScreen.h
         src/InvinsibilityPowerup.cpp
         src/InvinsibilityPowerup.h
+        src/ResourceManager.h
 )
 
 

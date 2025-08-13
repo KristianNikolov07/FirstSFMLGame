@@ -1,7 +1,8 @@
 #include "HPText.h"
 #include "Game.h"
+#include "ResourceManager.h"
 
-HPText::HPText(): Text(font, "Health: 1", 20) {
+HPText::HPText(): Text(ResourceManager::font, "Health: 1", 20) {
     setPosition({700, 0});
 }
 

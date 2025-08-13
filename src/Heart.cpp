@@ -1,7 +1,8 @@
 #include "Heart.h"
 #include "Player.h"
+#include "ResourceManager.h"
 
-Heart::Heart(float x, float y): texture("assets/textures/heart.png"), sprite(texture){
+Heart::Heart(float x, float y): sprite(ResourceManager::heartTexture){
     sprite.setScale({0.2f, 0.2f});
     sprite.setPosition({x, y});
 }

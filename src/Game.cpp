@@ -39,20 +39,20 @@ void Game::Update() {
         summoner();
 
         //Update hearts
-        for (auto heart : hearts) {
-            heart->update(delta, player);
+        for (Heart& heart : hearts) {
+            heart.update(delta, player);
         }
         clearHearts();
 
         //Update enemies
-        for (Enemy* enemy : enemies) {
-            enemy->update(delta, player, this);
+        for (Enemy& enemy : enemies) {
+            enemy.update(delta, player, this);
         }
         clearEnemies();
 
         //Update invinsibility powerups
-        for (InvinsibilityPowerup* invinsibilityPowerup : invinsibilityPowerups) {
-            invinsibilityPowerup->update(delta, player);
+        for (InvinsibilityPowerup& invinsibilityPowerup : invinsibilityPowerups) {
+            invinsibilityPowerup.update(delta, player);
         }
         clearInvinsibilityPowerups();
 
@@ -72,16 +72,16 @@ void Game::Render() {
 
     player.render(window);
 
-    for (Heart* heart: hearts) {
-        heart->render(window);
+    for (Heart& heart: hearts) {
+        heart.render(window);
     }
 
-    for (Enemy* enemy : enemies) {
-        enemy->render(window);
+    for (Enemy& enemy : enemies) {
+        enemy.render(window);
     }
 
-    for (InvinsibilityPowerup* invinsibilityPowerup : invinsibilityPowerups) {
-        invinsibilityPowerup->render(window);
+    for (InvinsibilityPowerup& invinsibilityPowerup : invinsibilityPowerups) {
+        invinsibilityPowerup.render(window);
     }
 
     window.draw(hpText);
@@ -104,19 +104,8 @@ void Game::reset() {
     player.reset();
     timer.reset();
 
-    for (Enemy* enemy : enemies) {
-        delete enemy;
-    }
     enemies.clear();
-
-    for (Heart* heart: hearts) {
-        delete heart;
-    }
     hearts.clear();
-
-    for (InvinsibilityPowerup* invinsibilityPowerup: invinsibilityPowerups) {
-        delete invinsibilityPowerup;
-    }
     invinsibilityPowerups.clear();
 
     clock.restart();
@@ -184,7 +173,7 @@ void Game::addEnemy(float speed, int amount) {
         }
         previousPos = x;
 
-        auto * enemy =  new Enemy(x, -120, speed);
+        Enemy enemy(x, -120, speed);
         enemies.push_back(enemy);
     }
 
@@ -192,9 +181,8 @@ void Game::addEnemy(float speed, int amount) {
 
 void Game::clearEnemies() {
     int i = 0;
-    for (Enemy* enemy : enemies) {
-        if (enemy->getPosition().y > 850) {
-            delete enemy;
+    for (Enemy& enemy : enemies) {
+        if (enemy.getPosition().y > 850) {
             enemies.erase(enemies.begin() + i);
         }
         i++;
@@ -205,15 +193,14 @@ void Game::addHeart() {
     const int randNum = rand() % 10;
     const int x = randNum * 80;
 
-    auto* heart = new Heart(x, -120);
+    Heart heart(x, -120);
     hearts.push_back(heart);
 }
 
 void Game::clearHearts() {
     int i = 0;
-    for (auto heart : hearts) {
-        if (heart->getPosition().y > 850) {
-            delete heart;
+    for (Heart heart : hearts) {
+        if (heart.getPosition().y > 850) {
             hearts.erase(hearts.begin() + i);
         }
         i++;
@@ -224,16 +211,14 @@ void Game::addInvinsibilityPowerup() {
     const int randNum = rand() % 10;
     const int x = randNum * 80;
 
-    std::cout<<x<<std::endl;
-    auto* invinsibilityPowerup = new InvinsibilityPowerup(x, -120);
+    InvinsibilityPowerup invinsibilityPowerup(x, -120);
     invinsibilityPowerups.push_back(invinsibilityPowerup);
 }
 
 void Game::clearInvinsibilityPowerups() {
     int i = 0;
-    for (auto invinsibilityPowerup : invinsibilityPowerups) {
-        if (invinsibilityPowerup->getPosition().y > 850) {
-            delete invinsibilityPowerup;
+    for (InvinsibilityPowerup& invinsibilityPowerup : invinsibilityPowerups) {
+        if (invinsibilityPowerup.getPosition().y > 850) {
             invinsibilityPowerups.erase(invinsibilityPowerups.begin() + i);
         }
         i++;
