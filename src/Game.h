@@ -4,6 +4,7 @@
 #include "BlinkingText.h"
 #include "GameOverScreen.h"
 #include "HPText.h"
+#include "InvinsibilityPowerup.h"
 #include "Player.h"
 #include "Timer.h"
 
@@ -39,6 +40,7 @@ class Game {
     Timer timer;
     std::vector<Enemy*> enemies;
     std::vector<Heart*> hearts;
+    std::vector<InvinsibilityPowerup*> invinsibilityPowerups;
     GameOverScreen gameOverScreen;
 
 
@@ -46,12 +48,14 @@ class Game {
     float defaultEnemySpeed = 200;
     float defaultEnemyAmount = 1;
     float defaultSpawnDelay = 1.0;
-    int defaultHeartSpawnChance = 5;
+    int defaultHeartSpawnChance = 10;
+    int defaultInvinsibilityPowerupSpawnChange = 5;
 
     float enemySpeed = defaultEnemySpeed;
     float enemyAmount = defaultEnemyAmount;
     float spawnDelay = defaultSpawnDelay;
     int heartSpawnChance = defaultHeartSpawnChance;
+    int invinsibilityPowerupSpawnChange = defaultInvinsibilityPowerupSpawnChange;
 
     //Functions
     void summoner();
@@ -59,4 +63,6 @@ class Game {
     void clearEnemies();
     void addHeart();
     void clearHearts();
+    void addInvinsibilityPowerup();
+    void clearInvinsibilityPowerups();
 };

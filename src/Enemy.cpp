@@ -28,8 +28,10 @@ void Enemy::render(sf::RenderWindow& window) {
 }
 
 bool Enemy::checkCollision(Player &player) const {
-    if (shape.getGlobalBounds().findIntersection(player.getGlobalBounds())) {
-        return true;
+    if (!player.isInvinsible()) {
+        if (shape.getGlobalBounds().findIntersection(player.getGlobalBounds())) {
+            return true;
+        }
     }
     return false;
 }

@@ -7,6 +7,8 @@
 Player::Player(float x, float y) {
     shape.setSize({size, size});
     shape.setPosition({x, y});
+
+    invinsibilityTimer.stop();
 }
 
 Player::~Player() {
@@ -39,9 +41,18 @@ void Player::update(const float delta, const sf::RenderWindow& window, Game* gam
     if (shape.getPosition().y + size > window.getSize().y) {
         shape.setPosition({shape.getPosition().x, window.getSize().y - size});
     }
+
+    if (invinsibility) {
+        if (invinsibilityTimer.getElapsedTime().asSeconds() >= invinsibilityDuration) {
+            invinsibility = false;
+            invinsibilityTimer.stop();
+            shape.setFillColor({255, 255, 255, 255});
+        }
+    }
 }
 
 void Player::render(sf::RenderWindow& window) {
+
     window.draw(shape);
 }
 
@@ -50,6 +61,12 @@ void Player::removeHP(int _hp, Game *game) {
     if (hp <= 0) {
         game->setGameOver();
     }
+}
+
+void Player::startInvinsibility() {
+    invinsibility = true;
+    invinsibilityTimer.restart();
+    shape.setFillColor({255, 255, 255, 100});
 }
 
 void Player::reset() {

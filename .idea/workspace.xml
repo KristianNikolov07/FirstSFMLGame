@@ -42,10 +42,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Added a game over screen">
+    <list default="true" id="280da2e4-8738-4a93-a598-f28400469366" name="Changes" comment="Pattern now reset after a game over, the hearts get cleared after a game over and fixed a potential memory leak(I think).">
+      <change afterPath="$PROJECT_DIR$/src/InvinsibilityPowerup.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InvinsibilityPowerup.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/flac-src/src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/freetype-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/freetype-src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/ogg-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/ogg-src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/lib/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/vorbis-src/lib/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,12 +129,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.main">
-    <configuration name="FLAC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FirstSFMLGame" TARGET_NAME="FLAC" CONFIG_NAME="Debug">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="FLAC" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FirstSFMLGame" TARGET_NAME="FLAC" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -220,7 +233,9 @@
       <workItem from="1754760289163" duration="3735000" />
       <workItem from="1754901432330" duration="4296000" />
       <workItem from="1754939636251" duration="3172000" />
-      <workItem from="1755032882825" duration="2451000" />
+      <workItem from="1755032882825" duration="2726000" />
+      <workItem from="1755078254028" duration="723000" />
+      <workItem from="1755079007758" duration="3988000" />
     </task>
     <task id="LOCAL-00001" summary="Linux fix">
       <option name="closed" value="true" />
@@ -334,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755034608694</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Pattern now reset after a game over, the hearts get cleared after a game over and fixed a potential memory leak(I think).">
+      <option name="closed" value="true" />
+      <created>1755035438075</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1755035438075</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +381,7 @@
     <MESSAGE value="Changed the font" />
     <MESSAGE value="Removed scenes" />
     <MESSAGE value="Added a game over screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a game over screen" />
+    <MESSAGE value="Pattern now reset after a game over, the hearts get cleared after a game over and fixed a potential memory leak(I think)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pattern now reset after a game over, the hearts get cleared after a game over and fixed a potential memory leak(I think)." />
   </component>
 </project>

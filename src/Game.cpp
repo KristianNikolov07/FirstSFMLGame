@@ -1,4 +1,7 @@
 #include "Game.h"
+
+#include <iostream>
+
 #include "Enemy.h"
 #include "Heart.h"
 
@@ -47,6 +50,12 @@ void Game::Update() {
         }
         clearEnemies();
 
+        //Update invinsibility powerups
+        for (InvinsibilityPowerup* invinsibilityPowerup : invinsibilityPowerups) {
+            invinsibilityPowerup->update(delta, player);
+        }
+        clearInvinsibilityPowerups();
+
 
         hpText.update(player);
         timer.update(delta);
@@ -69,6 +78,10 @@ void Game::Render() {
 
     for (Enemy* enemy : enemies) {
         enemy->render(window);
+    }
+
+    for (InvinsibilityPowerup* invinsibilityPowerup : invinsibilityPowerups) {
+        invinsibilityPowerup->render(window);
     }
 
     window.draw(hpText);
@@ -101,34 +114,59 @@ void Game::reset() {
     }
     hearts.clear();
 
+    for (InvinsibilityPowerup* invinsibilityPowerup: invinsibilityPowerups) {
+        delete invinsibilityPowerup;
+    }
+    invinsibilityPowerups.clear();
+
     clock.restart();
     gameOver = false;
 }
 
 void Game::summoner() {
 
+    //Phase 1
     if (timer.getSeconds() > 30) {
         enemySpeed = 300;
         enemyAmount = 2;
     }
 
+    //Phase 2
     if (timer.getSeconds() > 60) {
         enemySpeed = 500;
         enemyAmount = 3;
     }
 
+    //Phase 3
     if (timer.getSeconds() > 90) {
         spawnDelay = 0.5;
         enemySpeed = 400;
         enemyAmount = 1;
     }
 
+    //Phase 4
+    if (timer.getSeconds() > 120) {
+        enemyAmount = 3;
+        enemySpeed = 500;
+        spawnDelay = 0.4;
+    }
+
+
     if (spawnClock.getElapsedTime().asSeconds() > spawnDelay) {
         spawnClock.restart();
-        const int randNum = rand() % 100;
+
+        //Hearts
+        int randNum = rand() % 100;
         if (randNum <= heartSpawnChance) {
             addHeart();
         }
+
+        //Invinsibility Powerups
+        randNum = rand() % 100;
+        if (randNum <= invinsibilityPowerupSpawnChange) {
+            addInvinsibilityPowerup();
+        }
+
         addEnemy(enemySpeed, enemyAmount);
 
     }
@@ -136,9 +174,16 @@ void Game::summoner() {
 
 
 void Game::addEnemy(float speed, int amount) {
+    int previousPos = -1;
     for (int i = 0; i < amount; i++) {
-        const int randNum = rand() % 10;
-        const int x = randNum * 80;
+        int randNum = rand() % 10;
+        int x = randNum * 80;
+        while (previousPos == x) {
+            randNum = rand() % 10;
+            x = randNum * 80;
+        }
+        previousPos = x;
+
         auto * enemy =  new Enemy(x, -120, speed);
         enemies.push_back(enemy);
     }
@@ -170,6 +215,26 @@ void Game::clearHearts() {
         if (heart->getPosition().y > 850) {
             delete heart;
             hearts.erase(hearts.begin() + i);
+        }
+        i++;
+    }
+}
+
+void Game::addInvinsibilityPowerup() {
+    const int randNum = rand() % 10;
+    const int x = randNum * 80;
+
+    std::cout<<x<<std::endl;
+    auto* invinsibilityPowerup = new InvinsibilityPowerup(x, -120);
+    invinsibilityPowerups.push_back(invinsibilityPowerup);
+}
+
+void Game::clearInvinsibilityPowerups() {
+    int i = 0;
+    for (auto invinsibilityPowerup : invinsibilityPowerups) {
+        if (invinsibilityPowerup->getPosition().y > 850) {
+            delete invinsibilityPowerup;
+            invinsibilityPowerups.erase(invinsibilityPowerups.begin() + i);
         }
         i++;
     }
