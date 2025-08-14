@@ -1,3 +1,5 @@
+# Square Fall
+
 This is a small game I made while learning SFML. In it you dodge red squares for as long as you can.
 
 ## Gameplay
