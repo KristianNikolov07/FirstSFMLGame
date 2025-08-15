@@ -7,7 +7,7 @@
 
 Game::Game(): player(375, 500){
     //Window
-    window.create(sf::VideoMode({800, 800}), "SquareFall", sf::Style::Titlebar | sf::Style::Close);
+    window.create(sf::VideoMode({800, 800}), "Square Fall", sf::Style::Titlebar | sf::Style::Close);
     window.setFramerateLimit(60);
 
     //Seed
