@@ -27,7 +27,7 @@ add_executable(main WIN32 src/main.cpp
         src/ResourceManager.h
 )
 
-target_link_options(main PRIVATE -static-libstdc++ -static-libgcc)
+target_link_options(main PRIVATE -static -static-libstdc++ -static-libgcc)
 file(COPY assets DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 target_compile_features(main PRIVATE cxx_std_17)
 target_link_libraries(main PRIVATE SFML::Graphics SFML::Audio)
