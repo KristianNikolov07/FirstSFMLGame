@@ -15,13 +15,15 @@ This is a small game I made while learning SFML. In it you dodge red squares for
 <img width="802" height="833" alt="Screenshot 2025-08-14 194704" src="https://github.com/user-attachments/assets/643b6d4c-cdc4-4248-9e23-fdd4f53a72aa" />
 
 ## How to build
+**Requarements:**
+- A C++ compiler
+- CMake
 
 1. Clone the repo
-2. Make sure you have cmake installed: https://cmake.org/
-3. Run the following commands:
+2. Run the following commands:
 
 ```
 cmake -B build
 camke --build build
 ```
-4. The executable should be inside `build/bin`
+3. The executable should be inside `build/bin`
